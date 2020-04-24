@@ -25,3 +25,5 @@ Trả về danh sách các APIs và hướng dẫn kèm theo
 	GET: APIs/v0/MasterCodes/GroupCodes
 	Mô tả: Tạo danh sánh code và lưu những thông tin kèm theo. Client phải gửi những đoạn mã Json có chứa thông tin: Quantity, UserCode, AGICode trong body request.
 	Return: Status và thông tin vừa tạo.
+
+>Anh Khoa
