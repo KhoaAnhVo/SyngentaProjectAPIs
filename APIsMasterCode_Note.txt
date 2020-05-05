@@ -1,0 +1,69 @@
+﻿APIs có đường dẫn như sau:
+http://localhost:61515/APIs/v0/MasterCodes
+Sử dụng các phương thức của HTTP để thực hiện các thao tác
+	Create = POST
+	Find = GET
+	Update = PUT
+	Delete = DELETE
+Thông tin truyền đi tất cả được định dạng Json.
+///////////////////////Create //////////////////////////////////
+Tạo một Group code bằng cách tạo một request tới
+POST: http://localhost:61515/APIs/v0/MasterCodes
+kèm theo body có nội dung
+{
+    "UserCode": "NV222", //mã của nhân viên tạo group code
+    "Quantity": "888", //số lượng
+    "AGICode": "789" //mã sản phẩm
+}
+kết quả response về:
+Message: {
+    "Status": "OK",
+    "Message": "Successfully created",
+    "Description": "No",
+    "DateTime": "4/25/2020 8:04:35 AM",
+    "ExecutionTime": 5562
+},Result: [
+    {
+        "Id": 12,
+        "GroupName": "GC1587776675",
+        "UserCode": "NV222",
+        "AGICode": "789",
+        "Quantity": 888,
+        "DateTime": "2020-04-25T08:04:39"
+    }
+]
+
+Để xem thông tin các Group code đã tạo sử dụng 
+GET: http://localhost:61515/APIs/v0/MasterCodes
+Trả list thông tin của tất cả Groupcode đã tạo
+///////////////////////Find ////////////////////////////////////
+Để xem thông tin của một Group code cụ thể
+GET: http://localhost:61515/APIs/v0/MasterCodes/<Id>
+vd:xem thông tin của group code có Id = 10. 
+http://localhost:61515/APIs/v0/MasterCodes/10
+trả về:
+Message: {
+    "Status": "OK",
+    "Message": "Sucessfully excution!",
+    "Description": "No",
+    "DateTime": "4/25/2020 8:31:08 AM",
+    "ExecutionTime": 19
+},Result: 
+[
+    {
+        "Id": 10,
+        "GroupName": "GC1587725916",
+        "UserCode": "NV093",
+        "AGICode": "456",
+        "Quantity": 100,
+        "DateTime": "2020-04-24T17:58:37"
+    }
+]
+///////////////////////////Delete ////////////////////////////////
+Xóa một Groupcode dùng 
+DELETE: http://localhost:61515/APIs/v0/MasterCodes/<Id>
+vd: Xóa một Groupcode có Id = 11
+DELETE: http://localhost:61515/APIs/v0/MasterCodes/11
+///////////////////////////Update//////////////////////////////
+
+to be continue
